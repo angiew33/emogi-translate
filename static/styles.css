@@ -1,83 +1,84 @@
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-  }
-  
-  .translate-container {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      width: 500px;
-  }
-  
-  .language-selection {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-  }
-  
-  .language-selection select, 
-  .language-selection button {
-      font-size: 16px;
-      padding: 8px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      background-color: #f0f0f0;
-  }
-  
-  .language-selection button {
-      background-color: #fff;
-      cursor: pointer;
-  }
-  
-  .translate-box {
-      display: flex;
-      justify-content: space-between;
-  }
-  
-  textarea {
-      width: 48%;
-      height: 150px;
-      padding: 10px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: none;
-  }
-  
-  textarea[readonly] {
-      background-color: #f0f0f0;
-  }
-  
-  .action-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-  }
-  
-  button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      background-color: #007bff;
-      color: white;
-  }
-  
-  button:hover {
-      background-color: #0056b3;
-  }
-  
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.translate-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.language-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.language-selection select, 
+.language-selection button {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #fffbfb;
+    background-color: #f0f0f0;
+    color: #333;
+    appearance: none;
+}
+
+.language-selection button {
+    background-color: #f9f7f7;
+    cursor: pointer;
+}
+
+.translate-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+textarea {
+    width: 48%;
+    height: 150px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+textarea[readonly] {
+    background-color: #f0f0f0;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #4285F4;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
