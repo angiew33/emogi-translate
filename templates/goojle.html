@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <div class="translate-container">
+    <form action="/" method="POST"><div class="translate-container">
         <div class="language-selection">
             <select id="input-language">
                 <option value="en">English</option>
@@ -20,26 +20,23 @@
             </select>
         </div>
 
-        <form action="/" method="POST"><div class="translate-box">
-            <textarea name="input-text" placeholder="Enter text">{{  input }}</textarea>
-            <textarea name="output-text" placeholder="Translation" readonly>{{ result  }}</textarea>
+        <div class="translate-box">
+            <textarea id='input' name="input-text" placeholder="Enter text">{{  input }}</textarea>
+            <textarea id='output' name="output-text" placeholder="Translation" readonly>{{ result  }}</textarea>
         </div>
 
         <div class="action-buttons">
-            <button type=submit name="action" value="translate">Translate</button>
-            <button type=submit name="action" value="clear">Clear</button>
-            <button id="copy-button">Copy</button>
-        </div></form>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-        <div class="action-buttons">
-            <button type=submit id="translate-button">Translate</button>
-            <button id="clear-button">Clear</button>
-            <button id="copy-button">Copy</button>
+            <button type="submit" name="action" value="translate" id="translate_button">Translate</button>
+            <button type="submit" name="action" value="clear" id="clear_button">Clear</button>
+            <button type="button" id="copy_button">Copy</button>
+            <script>
+                const output=document.getElementById('output')
+                const copy_button=document.getElementById('copy_button')
+                copy_button.onclick= function (){
+                    output.select();
+                    document.execCommand('Copy')
+                }
+            </script>
         </div></form>
     </div>
 
