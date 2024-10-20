@@ -21,9 +21,20 @@
         </div>
 
         <form action="/" method="POST"><div class="translate-box">
-            <textarea name="input-text" placeholder="Enter text">{{  input  }}</textarea>
+            <textarea name="input-text" placeholder="Enter text">{{  input }}</textarea>
             <textarea name="output-text" placeholder="Translation" readonly>{{ result  }}</textarea>
         </div>
+
+        <div class="action-buttons">
+            <button type=submit name="action" value="translate">Translate</button>
+            <button type=submit name="action" value="clear">Clear</button>
+            <button id="copy-button">Copy</button>
+        </div></form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
         <div class="action-buttons">
             <button type=submit id="translate-button">Translate</button>
