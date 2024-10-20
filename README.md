@@ -6,4 +6,4 @@ Not at _all_ inspired by Google Translate, Goojles bridges the gap between all h
 
 Try out Goojle Translate by selecting an input "language" and typing the text or emojis you want translated. Then click "Translate" for a fun result suitable for all ages and backgrounds to understand! 
 
---Enhancing communication, one translation at a time--
+--Enhancing communication, one emoticon at a time--
