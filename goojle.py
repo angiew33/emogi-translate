@@ -21,13 +21,17 @@ def emoji_stems():
         stems[emote]=s
     return stems
 
-def sentence_to_emote(sentence,limit=5):
+stems=emoji_stems()
+
+def convert(sentence,limit=5):
     result = ''
-    stems = emoji_stems()
     sentence=sentence.split()
     for word in sentence:
         if word=='love' or word=='Love':
             result+=emoji.emojize(':blue_heart:')+' '
+            continue
+        if emoji.is_emoji(word):
+            result+=emoji.demojize(word).replace(':','').replace('_',' ')+ ' '
             continue
         temp=ps.stem(word)
         i=0
@@ -53,7 +57,7 @@ def result():
         input_text = ''.join(request.form['input-text'])
         action = request.form['action']
         if action == 'translate':
-            result = sentence_to_emote(input_text)
+            result = convert(input_text)
             return render_template('goojle.html', input=input_text, result=result) 
         if action == 'clear':
             return render_template('goojle.html') 
