@@ -23,15 +23,18 @@ def emoji_stems():
 
 stems=emoji_stems()
 
-def convert(sentence,limit=5):
+def convert(sentence,emo=False,limit=5):
     result = ''
     sentence=sentence.split()
     for word in sentence:
-        if word=='love' or word=='Love':
-            result+=emoji.emojize(':blue_heart:')+' '
+        if emo:
+            try:
+                result+=emoji.demojize(word).replace(':','').replace('_',' ')+ ' '
+            except:
+                result+=word+' '
             continue
-        if emoji.is_emoji(word):
-            result+=emoji.demojize(word).replace(':','').replace('_',' ')+ ' '
+        elif word=='love' or word=='Love':
+            result+=emoji.emojize(':blue_heart:')+' '
             continue
         temp=ps.stem(word)
         i=0
@@ -44,7 +47,6 @@ def convert(sentence,limit=5):
         if i==limit:
             result+=word + ' '
     return result
-
 
 @app.route('/')
 def index():
