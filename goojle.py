@@ -21,13 +21,12 @@ def emoji_stems():
         stems[emote]=s
     return stems
 
-stems=emoji_stems()
-
-def convert(sentence,emo=False,limit=5):
+def convert(sentence,input_language,limit=5):
+    stems = emoji_stems()
     result = ''
     sentence=sentence.split()
     for word in sentence:
-        if emo:
+        if input_language=='em':
             try:
                 result+=emoji.demojize(word).replace(':','').replace('_',' ')+ ' '
             except:
@@ -48,21 +47,30 @@ def convert(sentence,emo=False,limit=5):
             result+=word + ' '
     return result
 
+
 @app.route('/')
 def index():
     return render_template('goojle.html')
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/', methods=['GET', 'POST'])
 def result():
     result = ''
-    if request.method == "POST":
-        input_text = ''.join(request.form['input-text'])
-        action = request.form['action']
+    if request.method == 'POST':
+        action = request.form.get('action')
+        '''data = request.get_json()
+        action = data.get('action')'''
         if action == 'translate':
-            result = convert(input_text)
-            return render_template('goojle.html', input=input_text, result=result) 
-        if action == 'clear':
-            return render_template('goojle.html') 
+            input_text = ''.join(request.form.get('input-text'))
+            input_language = request.form.get('input-language', 'en')
+            result = convert(input_text, input_language)
+
+        elif action == 'clear':
+            input_text = ''
+            result = ''
+        
+    return render_template('goojle.html', input=input_text, result=result) 
+        
+
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', port = 3000, debug=True)
