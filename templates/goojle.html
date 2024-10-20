@@ -11,18 +11,17 @@
         <div class="language-selection">
             <select id="input-language">
                 <option value="en">English</option>
-                <option value="es">Emogi</option>
-                <!-- Add more languages as needed -->
+                <option value="em">Emogi</option>
             </select>
             <button id="swap-languages">⇄</button>
             <select id="output-language">
-                <option value="es">Emogi</option>
+                <option value="em">Emogi</option>
                 <option value="en">English</option>
             </select>
         </div>
 
         <form action="/" method="POST"><div class="translate-box">
-            <textarea name="input-text" placeholder="Enter text"></textarea>
+            <textarea name="input-text" placeholder="Enter text">{{  input  }}</textarea>
             <textarea name="output-text" placeholder="Translation" readonly>{{ result  }}</textarea>
         </div>
 
