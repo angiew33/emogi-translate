@@ -27,7 +27,7 @@ def sentence_to_emote(sentence,limit=5):
     sentence=sentence.split()
     for word in sentence:
         if word=='love' or word=='Love:
-            result+=(emoji.emojize(':blue_heart:')
+            result+=emoji.emojize(':blue_heart:')+' '
             continue
         temp=ps.stem(word)
         i=0
